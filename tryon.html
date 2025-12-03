@@ -1,0 +1,250 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Try-On</title>
+  <link rel="stylesheet" href="tryon.css">
+</head>
+<body>
+  <section id="header">
+    <a href="index.html"><img src="logo.jpg" alt="Logo"></a>
+    <ul id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a class="active" href="tryon.html">Virtual Try-On</a></li>
+    </ul>
+  </section>
+
+  <section id="chatbot">
+    <div class="chat-container" id="chat-container">
+      <div class="bot-message">👋 Hi! I’m your Virtual Stylist. Want to try on an outfit? Upload your photo below!</div>
+    </div>
+
+    <div class="input-box">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      <button id="send-btn">Send</button>
+    </div>
+
+    <div class="upload-box">
+      <label for="photo-upload">📸 Upload Your Photo:</label>
+      <input type="file" id="photo-upload" accept="image/*">
+    </div>
+
+    <div id="preview-area">
+      <h3>Preview:</h3>
+      <canvas id="tryon-canvas"></canvas>
+    </div>
+    <div class="filter-buttons">
+  <button id="btn-grayscale">Grayscale</button>
+  <button id="btn-sepia">Sepia</button>
+  <button id="btn-clear">Clear Filter</button>
+  <button id="btn-shirt">Try Shirt 👕</button>
+</div>
+
+  </section>
+
+  <script src="tryon.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Try-On</title>
+  <link rel="stylesheet" href="tryon.css">
+</head>
+<body> -->
+  <!-- Header -->
+  <!-- <header id="header">
+    <a href="index.html"><img src="logo.png" alt="Logo"></a>
+    <ul id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="tryon.html" class="active">Virtual Try-On</a></li>
+    </ul>
+  </header> -->
+
+  <!-- Upload + Preview -->
+  <!-- <section id="tryon-section">
+    <h2>Virtual Try-On</h2>
+
+    <div class="upload-box">
+      <label for="photo-upload" class="upload-label">Upload Your Photo</label>
+      <input type="file" id="photo-upload" accept="image/*">
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="tryon-canvas"></canvas>
+    </div>
+
+    <button id="download-btn">Download Virtual Image</button>
+  </section>
+
+  <script src="tryon.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Try-On</title>
+  <link rel="stylesheet" href="tryon.css" />
+</head>
+<body>
+  <header id="header">
+    <a href="index.html"><img src="logo.png" alt="Logo" /></a>
+    <ul id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="tryon.html" class="active">Virtual Try-On</a></li>
+    </ul>
+  </header>
+
+  <main id="tryon-section">
+    <h2>Virtual Try-On</h2>
+
+    <div class="controls">
+      <label class="upload-label">
+        Upload Photo
+        <input type="file" id="photo-upload" accept="image/*" />
+      </label>
+
+      <button id="load-sample">Load sample cart items</button>
+      <button id="apply-cart">Apply Cart Items</button>
+      <button id="clear-all">Clear Canvas</button>
+      <button id="download-btn">Download Merged Image</button>
+    </div>
+
+    <section class="work-area">
+      <div class="canvas-container">
+        <canvas id="tryon-canvas"></canvas>
+      </div>
+
+      <aside class="cart-panel">
+        <h3>Cart Items</h3>
+        <div id="cart-list"></div>
+        <p class="note">Use the X / Y / Scale controls below each item to place/resize it.</p>
+      </aside>
+    </section>
+
+    <div id="log" aria-live="polite"></div>
+  </main>
+
+  <script src="tryon.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Try-On</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #333;
+    }
+    .upload-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    input[type="file"] {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #ccc;
+    }
+    #result {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 400px;
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Virtual Try-On</h1>
+  
+  <div class="upload-box">
+    <label>Upload Person Image:</label>
+    <input type="file" id="person" accept="image/*" required>
+    
+    <label>Upload Clothes Image:</label>
+    <input type="file" id="clothes" accept="image/*" required>
+    
+    <button id="submitBtn">Try On</button>
+  </div>
+
+  <div id="result">
+    <h3>Result:</h3>
+    <img id="outputImage" src="" alt="Result will appear here">
+  </div>
+
+  <script>
+    document.getElementById("submitBtn").addEventListener("click", async () => {
+      const personFile = document.getElementById("person").files[0];
+      const clothesFile = document.getElementById("clothes").files[0];
+      if (!personFile || !clothesFile) {
+        alert("Please upload both images!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("person", personFile);
+      formData.append("clothes", clothesFile);
+
+      const button = document.getElementById("submitBtn");
+      button.disabled = true;
+      button.innerText = "Processing...";
+
+      try {
+        const response = await fetch("/tryon", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!response.ok) {
+          alert("Error: " + response.statusText);
+          return;
+        }
+
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        const outputImg = document.getElementById("outputImage");
+        outputImg.src = imageUrl;
+        outputImg.style.display = "block";
+      } catch (err) {
+        console.error(err);
+        alert("Something went wrong!");
+      } finally {
+        button.disabled = false;
+        button.innerText = "Try On";
+      }
+    });
+  </script>
+</body>
+</html>

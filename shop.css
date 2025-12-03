@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+}
+
+/* Header */
+#header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+}
+
+#navbar {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+}
+
+#navbar li a.active,
+#navbar li a:hover {
+    color: #ff5d5d;
+}
+
+/* Mobile */
+#mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        position: absolute;
+        top: 70px;
+        right: -200px;
+        background: white;
+        width: 200px;
+        height: 100vh;
+        padding: 50px 20px;
+        flex-direction: column;
+        transition: right 0.3s;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #mobile {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+    }
+}
+
+/* Shop Header */
+.shop-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffe6e6;
+}
+
+.shop-header h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.shop-header p {
+    color: #555;
+}
+
+/* Products */
+.product-container {
+    padding: 40px 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
+}
+
+.product {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #ddd;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff4444;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #ff5d5d;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff2d2d;
+}

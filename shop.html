@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akula Shop — Shop</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- header (same structure as index.html) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/logo.jpg" alt="logo" class="logo-img"></a>
+      <nav class="nav" id="main-nav">
+        <ul id="nav-ul">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link active">Shop</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <input id="site-search" placeholder="Search products..." class="search-input">
+        <a href="cart.html" class="icon-btn cart-btn"><i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cart-count-2">0</span></a>
+        <button id="menu-toggle-mobile" class="icon-btn mobile-only"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop top -->
+  <section class="container section">
+    <div class="section-header">
+      <h2>Shop</h2>
+      <p>Browse all products</p>
+    </div>
+
+    <div class="shop-layout">
+      <!-- filters -->
+      <aside class="filters">
+        <h4>Categories</h4>
+        <ul id="category-list" class="category-list"></ul>
+
+        <h4>Price</h4>
+        <div class="price-filter">
+          <input id="min-price" type="number" placeholder="Min">
+          <input id="max-price" type="number" placeholder="Max">
+          <button id="price-filter-btn" class="btn">Apply</button>
+        </div>
+
+        <h4>Sort</h4>
+        <select id="sort-select">
+          <option value="popular">Most popular</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+        </select>
+      </aside>
+
+      <!-- products grid -->
+      <main class="shop-main">
+        <div id="shop-grid" class="grid"></div>
+
+        <div id="no-results" class="no-results" style="display:none;">
+          <p>No products found — try different filters.</p>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <!-- same footer content as index -->
+    <div class="container footer-grid">
+      <div class="col"><img src="assets/logo.jpg" class="logo-small"><h4>Contact</h4></div>
+      <div class="col"><h4>About</h4></div>
+      <div class="col"><h4>My Account</h4></div>
+      <div class="col"><h4>Install App</h4></div>
+    </div>
+    <div class="copy">© 2025 Akula Shop — All rights reserved</div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

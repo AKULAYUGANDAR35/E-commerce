@@ -1,0 +1,158 @@
+body {
+  background-color: rgb(238, 233, 233);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header same as index */
+#header {
+  padding: 10px 80px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: #d7dcd7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0,0.10);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+#header a img {
+  width: 100px;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+}
+#navbar li {
+  list-style: none;
+  padding: 0px 20px;
+  position: relative;
+}
+#navbar li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+#navbar li a.active,
+#navbar li a:hover {
+  color: green;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: '';
+  width: 30%;
+  height: 3px;
+  background: green;
+  position: absolute;
+  bottom: -6px;
+  left: 20px;
+}
+
+/* ---------------- CART PAGE ---------------- */
+#cart {
+  padding: 40px 80px;
+}
+
+#cart h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cart-container {
+  overflow-x: auto;
+}
+
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#cart table thead {
+  background: #088178;
+  color: #fff;
+}
+
+#cart table th,
+#cart table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+#cart table img {
+  max-width: 60px;
+  border-radius: 8px;
+}
+
+#cart table input.qty-input {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.remove-btn:hover {
+  background: darkred;
+}
+
+/* ---------------- SUMMARY ---------------- */
+.cart-summary {
+  text-align: right;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cart-summary h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#checkout-btn {
+  padding: 12px 25px;
+  background: #088178;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#checkout-btn:hover {
+  background: #06665e;
+  transform: scale(1.05);
+}
+
+/* ---------------- CART COUNT BADGE ---------------- */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
